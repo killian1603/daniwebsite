@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <title>Travel Destination</title>
+    <style>
+        body {
+            font-family: "Dancing Script", cursive;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header {
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .header h1 {
+            margin: 0px 20px 0 20px;
+            font-size: 3em;
+            color: #ff6f61;
+        }
+        .header h2 {
+            margin: 0px 20px 0 20px;
+            font-size: 1.5em;
+            color: #ff6f61;
+        }
+        .cta {
+            font-size: 1.2em;
+            color: #ff6f61;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cta .arrow {
+            font-size: 2em;
+            margin-top: 10px;
+        }
+
+        .destination {
+            margin: 10px 0;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+
+
+        .destination h3 {
+            cursor: pointer;
+            color: #ff6f61;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .destination h3::before {
+            content: '+';
+            margin-right: 10px;
+        }
+        .destination p {
+            display: none;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        .destination img {
+            display: none;
+            width: 300px;
+            height: auto;
+            margin: 10px;
+        }
+        .destination.active h3::before {
+            content: '-';
+        }
+        .destination.active p,
+        .destination.active img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <video autoplay muted loop>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h1>Travel Destination</h1>
+        <h2>For the 3rd Anniversary of Dani & Kiki</h2>
+        <div class="cta">
+            Scroll to see the destination
+            <div class="arrow">↓</div>
+        </div>
+    </div>
+    <div class="destination" onclick="toggleDetails(this)">
+        <h3>Paris</h3>
+        <p>Paris, the city of love, is the perfect destination for a romantic getaway. Enjoy the beautiful sights, delicious food, and unforgettable experiences.</p>
+        <img src="paris-1.jpg" alt="Paris">
+        <img src="paris-2.jpg" alt="Paris">
+    </div>
+    <div class="destination" onclick="toggleDetails(this)">
+        <h3>Greece</h3>
+        <p>Greece, with its stunning islands and rich history, offers a perfect blend of relaxation and adventure. Explore ancient ruins, enjoy crystal-clear waters, and savor delicious Mediterranean cuisine.</p>
+        <img src="greece-1.jpeg" alt="Greece">
+        <img src="greece-2.jpg" alt="Greece">
+    </div>
+    <div class="destination" onclick="toggleDetails(this)">
+        <h3>Turkey</h3>
+        <p>Turkey, a land where East meets West, is known for its vibrant culture and breathtaking landscapes. Discover the bustling bazaars, historic sites, and indulge in mouth-watering Turkish delights.</p>
+        <img src="turkey-1.jpg" alt="Turkey">
+        <img src="turkey-2.jpg" alt="Turkey">
+    </div>
+    <div class="destination" onclick="toggleDetails(this)">
+        <h3>Portugal</h3>
+        <p>Portugal, a country of diverse landscapes and rich culture, offers something for everyone. Explore historic cities, enjoy scenic coastal views, and taste the world-renowned Portuguese cuisine.</p>
+        <img src="portugal-1.jpeg" alt="Portugal">
+        <img src="portugal-2.jpg" alt="Portugal">
+    </div>
+    
+    <script>
+        function toggleDetails(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
